@@ -1,0 +1,11 @@
+
+> frontend@0.0.0 build
+> tsc -b && vite build
+
+src/pages/NetworkTraffic.tsx(118,31): error TS2345: Argument of type '{ ip: string; bytes: number; packets: number; flows: number; threats: number; status: string; }[]' is not assignable to parameter of type 'SetStateAction<TopTalker[]>'.
+  Type '{ ip: string; bytes: number; packets: number; flows: number; threats: number; status: string; }[]' is not assignable to type 'TopTalker[]'.
+    Type '{ ip: string; bytes: number; packets: number; flows: number; threats: number; status: string; }' is not assignable to type 'TopTalker'.
+      Types of property 'status' are incompatible.
+        Type 'string' is not assignable to type '"normal" | "suspicious" | "blocked"'.
+src/pages/NetworkTraffic.tsx(289,40): error TS6133: 'e' is declared but its value is never read.
+src/pages/NetworkTraffic.tsx(293,38): error TS2304: Cannot find name 'TableChartIcon'.
