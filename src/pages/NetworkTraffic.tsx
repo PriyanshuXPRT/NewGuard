@@ -190,9 +190,9 @@ const NetworkTraffic: React.FC = () => {
     };
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1, px: { xs: 2, md: 3 }, py: { xs: 2, md: 3 } }}>
             {/* Header with actions */}
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4, flexWrap: 'wrap', gap: 2 }}>
                 <Typography variant="h4" sx={{ fontWeight: 'bold', color: 'primary.main' }}>
                     Network Traffic Analysis
                 </Typography>
@@ -216,8 +216,8 @@ const NetworkTraffic: React.FC = () => {
             </Box>
 
             {/* Filters Bar */}
-            <Paper sx={{ p: 2, mb: 3 }}>
-                <Grid container spacing={2} alignItems="center">
+            <Paper sx={{ p: 3, mb: 4 }}>
+                <Grid container spacing={3} alignItems="center">
                     <Grid size={{ xs: 12, md: 3 }}>
                         <TextField
                             fullWidth
@@ -305,45 +305,53 @@ const NetworkTraffic: React.FC = () => {
             </Paper>
 
             {/* Key Metrics */}
-            <Grid container spacing={3} sx={{ mb: 3 }}>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                    <MetricCard
-                        title="Total Bandwidth"
-                        value={metrics.totalBandwidth}
-                        icon={<TimelineIcon />}
-                        color="#00e676"
-                    />
+            <Grid container spacing={4} sx={{ mb: 4 }}>
+                <Grid item xs={12} sm={6} md={3}>
+                    <Box sx={{ minHeight: 140 }}>
+                        <MetricCard
+                            title="Total Bandwidth"
+                            value={metrics.totalBandwidth}
+                            icon={<TimelineIcon />}
+                            color="#00e676"
+                        />
+                    </Box>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                    <MetricCard
-                        title="Active Connections"
-                        value={metrics.activeConnections.toLocaleString()}
-                        icon={<TimelineIcon />}
-                        color="#00e676"
-                    />
+                <Grid item xs={12} sm={6} md={3}>
+                    <Box sx={{ minHeight: 140 }}>
+                        <MetricCard
+                            title="Active Connections"
+                            value={metrics.activeConnections.toLocaleString()}
+                            icon={<TimelineIcon />}
+                            color="#00e676"
+                        />
+                    </Box>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                    <MetricCard
-                        title="Packets/sec"
-                        value={metrics.packetsPerSecond.toLocaleString()}
-                        icon={<TimelineIcon />}
-                        color="#00e676"
-                    />
+                <Grid item xs={12} sm={6} md={3}>
+                    <Box sx={{ minHeight: 140 }}>
+                        <MetricCard
+                            title="Packets/sec"
+                            value={metrics.packetsPerSecond.toLocaleString()}
+                            icon={<TimelineIcon />}
+                            color="#00e676"
+                        />
+                    </Box>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                    <MetricCard
-                        title="Threats Blocked"
-                        value={metrics.threatsBlocked.toString()}
-                        icon={<WarningIcon />}
-                        color="#ff4444"
-                    />
+                <Grid item xs={12} sm={6} md={3}>
+                    <Box sx={{ minHeight: 140 }}>
+                        <MetricCard
+                            title="Threats Blocked"
+                            value={metrics.threatsBlocked.toString()}
+                            icon={<WarningIcon />}
+                            color="#ff4444"
+                        />
+                    </Box>
                 </Grid>
             </Grid>
 
             {/* Traffic Chart and Protocol Distribution */}
-            <Grid container spacing={3} sx={{ mb: 3 }}>
+            <Grid container spacing={4} sx={{ mb: 4 }}>
                 <Grid size={{ xs: 12, md: 8 }}>
-                    <Paper sx={{ p: 2 }}>
+                    <Paper sx={{ p: 4 }}>
                         <Typography variant="h6" gutterBottom>
                             Traffic Overview
                         </Typography>
@@ -357,7 +365,7 @@ const NetworkTraffic: React.FC = () => {
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, md: 4 }}>
-                    <Paper sx={{ p: 2 }}>
+                    <Paper sx={{ p: 4 }}>
                         <Typography variant="h6" gutterBottom>
                             Protocol Distribution
                         </Typography>
@@ -395,9 +403,9 @@ const NetworkTraffic: React.FC = () => {
             </Grid>
 
             {/* Top Talkers */}
-            <Grid container spacing={3} sx={{ mb: 3 }}>
+            <Grid container spacing={4} sx={{ mb: 4 }}>
                 <Grid size={{ xs: 12 }}>
-                    <Paper sx={{ p: 2 }}>
+                    <Paper sx={{ p: 4 }}>
                         <Typography variant="h6" gutterBottom>
                             Top Talkers
                         </Typography>
@@ -463,8 +471,8 @@ const NetworkTraffic: React.FC = () => {
             {/* Traffic Flows Table */}
             <Grid container spacing={3}>
                 <Grid size={{ xs: 12 }}>
-                    <Paper sx={{ p: 2 }}>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                    <Paper sx={{ p: 4 }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3, flexWrap: 'wrap', gap: 2 }}>
                             <Typography variant="h6">
                                 Live Traffic Flows
                             </Typography>
@@ -480,7 +488,7 @@ const NetworkTraffic: React.FC = () => {
                                 <CircularProgress />
                             </Box>
                         ) : (
-                            <TableContainer sx={{ maxHeight: 400 }}>
+                            <TableContainer sx={{ maxHeight: 500 }}>
                                 <Table stickyHeader size="small">
                                     <TableHead>
                                         <TableRow>
